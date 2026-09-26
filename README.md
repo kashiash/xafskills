@@ -58,6 +58,26 @@ Możesz też zaktualizować ją ręcznie:
 
 ### Instalacja ręczna
 
+#### Codex
+
+Umiejętności Codex odczytuje z katalogu użytkownika `~/.agents/skills/` albo z katalogu repozytorium `.agents/skills/`. Skopiuj cały folder umiejętności, razem z plikami pomocniczymi:
+
+```bash
+mkdir -p ~/.agents/skills
+cp -R skills/xaf-efcore-entities ~/.agents/skills/
+```
+
+Aby udostępnić umiejętność tylko w bieżącym repozytorium:
+
+```bash
+mkdir -p .agents/skills
+cp -R skills/xaf-efcore-entities .agents/skills/
+```
+
+Codex wykrywa zmiany umiejętności automatycznie. Jeśli nowa umiejętność się nie pojawi, uruchom Codex ponownie. Zobacz [dokumentację umiejętności Codex](https://developers.openai.com/codex/skills).
+
+#### Claude Code
+
 Możesz skopiować wybraną umiejętność z katalogu `skills/`:
 
 ```bash
