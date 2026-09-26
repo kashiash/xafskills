@@ -12,7 +12,7 @@ description: >
 
 Use this skill when working with persistent tags on XAF business objects. Tags have three separate parts: tag definitions, assignments to records, and optional rules that manage assignments.
 
-For evidence and patterns from Fleetman, DataDrive, HIS, and PathQ, read [the project comparison](../../docs/xaf-tags-comparison.md). Inspect the target repository before choosing a pattern; the projects use both XPO and EF Core and their current features differ.
+Inspect the target application's tag model, ORM, security rules, and assignment lifecycle before choosing an implementation. Use only patterns supported by that application.
 
 When adding reversible automatic rules or provenance to assignments, also read [the automatic tagging design](../../docs/xaf-auto-tags-design.md). It defines safe ownership, removal, disable, and retry behavior.
 
@@ -96,4 +96,4 @@ Before finishing, confirm:
 - Any text badge editor is correctly distinguished from persistent tag relations.
 - Tests cover model persistence, manual operations, criteria, tenant boundaries, repeated rule runs, and assignment ownership where applicable.
 
-For cross-project tradeoffs, use [the comparison](../../docs/xaf-tags-comparison.md).
+Keep provider-specific persistence details separate from the shared tag behavior. Follow the target application's established EF Core or XPO schema-update process.

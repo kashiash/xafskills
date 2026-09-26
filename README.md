@@ -12,32 +12,30 @@ Pomagają agentom AI unikać typowych pułapek podczas pracy z XAF i EF Core.
 
 | Umiejętność | Zakres |
 |---|---|
-| **xaf-efcore-entities** | Tworzenie encji: właściwości `virtual`, `BaseObjectInt`, `ObservableCollection`, precyzja `decimal`, pułapka `DateTime` w PostgreSQL, indeksy `GCRecord` i konwertery wartości. |
-| **xaf-blazor-startup** | Konfiguracja `Startup.cs`: kolejność rejestracji usług, potok middleware, JWT, OData i Web API, cykl życia modułów oraz obiekty nietrwałe. |
-| **xaf-security** | Uprawnienia do typów, obiektów i właściwości; eksport i import ról; `PermissionsReloadMode`; uwierzytelnianie zadań w tle; `CurrentUserIdOperator`. |
-| **xaf-reporting** | ReportsV2: obiekty parametrów, pułapka `Visible=false`, `GetCriteria()` i `FilterString`, `PredefinedReportsUpdater`. |
-| **devexpress-xaf-docker** | Konteneryzacja XAF Blazor: natywne zależności SkiaSharp, wersje DevExpress, PostgreSQL i MySQL oraz inicjalizacja schematu. |
-| **xaf-tags** | Trwałe tagi w XAF dla EF Core i XPO: przypisywanie, filtrowanie, akcje zbiorcze, automatyzacja i wyświetlanie oznaczeń. |
+| **[xaf-efcore-entities](skills/xaf-efcore-entities/SKILL.md)** | Tworzenie encji: właściwości `virtual`, `BaseObjectInt`, `ObservableCollection`, precyzja `decimal`, pułapka `DateTime` w PostgreSQL, indeksy `GCRecord` i konwertery wartości. |
+| **[xaf-blazor-startup](skills/xaf-blazor-startup/SKILL.md)** | Konfiguracja `Startup.cs`: kolejność rejestracji usług, potok middleware, JWT, OData i Web API, cykl życia modułów oraz obiekty nietrwałe. |
+| **[xaf-security](skills/xaf-security/SKILL.md)** | Uprawnienia do typów, obiektów i właściwości; eksport i import ról; `PermissionsReloadMode`; uwierzytelnianie zadań w tle; `CurrentUserIdOperator`. |
+| **[xaf-reporting](skills/xaf-reporting/SKILL.md)** | ReportsV2: obiekty parametrów, pułapka `Visible=false`, `GetCriteria()` i `FilterString`, `PredefinedReportsUpdater`. |
+| **[devexpress-xaf-docker](skills/devexpress-xaf-docker/SKILL.md)** | Konteneryzacja XAF Blazor: natywne zależności SkiaSharp, wersje DevExpress, PostgreSQL i MySQL oraz inicjalizacja schematu. |
+| **[xaf-tags](skills/xaf-tags/SKILL.md)** | Trwałe tagi w XAF dla EF Core i XPO: przypisywanie, filtrowanie, akcje zbiorcze, automatyzacja i wyświetlanie oznaczeń. |
 
 ### Wzorce
 
 | Umiejętność | Zakres |
 |---|---|
-| **xaf-hangfire-jobs** | Zadania Command/Handler bez zależności od XAF, `HangfireJobDispatcher` i `DirectJobDispatcher`, encja `JobDefinition`, uwierzytelnianie konta technicznego oraz synchronizacja zadań przy starcie. |
-| **xaf-search-panels** | Konfigurowalne okna wyszukiwania z DTO `[DomainComponent]` oraz ograniczenia kompilacji Roslyn podczas działania z `AddSecuredEFCore`. |
-| **xaf-custom-conditional-appearance** | Wspólny kontrakt `AdditionalAppearanceRule`, reguły wbudowane, generowane w kodzie i zapisane w EF Core lub XPO. Opisuje też tworzenie reguły z aktywnego filtra listy. |
-| **xaf-navigation-hub** | Startowy `DashboardView` z kafelkami, filtrowaniem według uprawnień i ulubionymi przypiętymi przez użytkownika. |
-| **xaf-environment-auth** | Wybór SSO lub hasła na podstawie `ASPNETCORE_ENVIRONMENT`, wraz z wyjątkiem dla konta technicznego Hangfire. |
-| **xaf-playwright-testing** | Testy E2E XAF Blazor w Playwright i NUnit: logowanie, odporne selektory, zrzuty ekranu po błędach i synchronizacja z siecią. |
-| **xaf-easytest-authoring** | Testy funkcjonalne EasyTest dla WinForms i Blazor: konfiguracja projektów, selektory, API EasyTest oraz typowe pułapki lokalizacji i zagnieżdżonych siatek. |
-| **xaf-saved-list-filters** | Zapisywanie filtrów list XAF z EF Core: filtry prywatne i publiczne, właściciel, zakres widoku i tenanta, bezpieczne użycie `CriteriaOperator` oraz czyszczenie kryteriów. |
+| **[xaf-hangfire-jobs](skills/xaf-hangfire-jobs/SKILL.md)** | Zadania Command/Handler bez zależności od XAF, `HangfireJobDispatcher` i `DirectJobDispatcher`, encja `JobDefinition`, uwierzytelnianie konta technicznego oraz synchronizacja zadań przy starcie. |
+| **[xaf-search-panels](skills/xaf-search-panels/SKILL.md)** | Konfigurowalne okna wyszukiwania z DTO `[DomainComponent]` oraz ograniczenia kompilacji Roslyn podczas działania z `AddSecuredEFCore`. |
+| **[xaf-custom-conditional-appearance](skills/xaf-custom-conditional-appearance/SKILL.md)** | Wspólny kontrakt `AdditionalAppearanceRule`, reguły wbudowane, generowane w kodzie i zapisane w EF Core lub XPO. Opisuje też tworzenie reguły z aktywnego filtra listy. |
+| **[xaf-navigation-hub](skills/xaf-navigation-hub/SKILL.md)** | Startowy `DashboardView` z kafelkami, filtrowaniem według uprawnień i ulubionymi przypiętymi przez użytkownika. |
+| **[xaf-environment-auth](skills/xaf-environment-auth/SKILL.md)** | Wybór SSO lub hasła na podstawie `ASPNETCORE_ENVIRONMENT`, wraz z wyjątkiem dla konta technicznego Hangfire. |
+| **[xaf-playwright-testing](skills/xaf-playwright-testing/SKILL.md)** | Testy E2E XAF Blazor w Playwright i NUnit: logowanie, odporne selektory, zrzuty ekranu po błędach i synchronizacja z siecią. |
+| **[xaf-easytest-authoring](skills/xaf-easytest-authoring/SKILL.md)** | Testy funkcjonalne EasyTest dla WinForms i Blazor: konfiguracja projektów, selektory, API EasyTest oraz typowe pułapki lokalizacji i zagnieżdżonych siatek. |
+| **[xaf-saved-list-filters](skills/xaf-saved-list-filters/SKILL.md)** | Zapisywanie filtrów list XAF z EF Core: filtry prywatne i publiczne, właściciel, zakres widoku i tenanta, bezpieczne użycie `CriteriaOperator` oraz czyszczenie kryteriów. |
 
 ## Materiały o wzorcach
 
 - [Umiejętność zapisanych filtrów](skills/xaf-saved-list-filters/SKILL.md) — dodawanie zapisanych filtrów list w aplikacjach XAF z EF Core.
-- [Porównanie reguł wyglądu](docs/appearance-rules-comparison.md) — wzorce Fleetman, DataDrive, HIS i PathQ oraz wspólny kontrakt.
 - [Umiejętność reguł wyglądu](skills/xaf-custom-conditional-appearance/SKILL.md) — atrybuty XAF, reguły generowane w kodzie i konfiguracja EF Core/XPO.
-- [Porównanie tagów](docs/xaf-tags-comparison.md) — rozwiązania Fleetman, DataDrive, HIS i PathQ.
 - [Projekt automatycznego tagowania](docs/xaf-auto-tags-design.md) — reguły, praca na tenantach i bezpieczne usuwanie przypisań.
 - [Umiejętność tagów](skills/xaf-tags/SKILL.md) — tagi w XAF dla EF Core i XPO.
 

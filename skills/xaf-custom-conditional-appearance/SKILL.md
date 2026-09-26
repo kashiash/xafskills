@@ -34,11 +34,11 @@ Establish these facts from the target repository before choosing a design:
 5. Existing appearance attributes, controllers, cache/storage helpers, non-persistent views, and rule configuration screens.
 6. How criteria are authored, validated, stored, and evaluated for the selected type.
 
-Read the relevant provider reference and project examples before copying a pattern:
+Read the relevant provider reference and implementation guidance before copying a pattern:
 
 - [EF Core projects](references/ef-core.md)
 - [XPO projects](references/xpo.md)
-- [Observed project differences](references/project-patterns.md)
+- [Implementation patterns](references/project-patterns.md)
 
 ## Canonical persistent contract
 
@@ -97,7 +97,7 @@ The persistence model and ObjectSpace queries are provider-specific. The rule-se
 
 Do not copy a persistent entity between providers. For EF Core, use the project's EF base type, virtual persistent properties, DbContext registration, and migration conventions. For XPO, use the project's XPO persistent base and session/property conventions. Keep provider-specific code in the Module layer if all supported platforms need the rule; put editor/grid-specific rendering in the appropriate platform project.
 
-Read only the relevant provider reference for implementation details. The XPO reference describes a porting pattern: Fleetman demonstrates XPO and code-generated appearance rules, but it does not currently provide the same administrator-editable database rule system as DataDrive.
+Read only the relevant provider reference for implementation details. Code-generated rules and persistent administrator-managed rules are separate approaches; inspect the target application's actual model before choosing between them.
 
 ## Keep these designs separate
 
@@ -121,6 +121,4 @@ Do not merge these paths into one controller merely because they all affect appe
 
 ## Related material
 
-- [Comparison and recommendation](../../docs/appearance-rules-comparison.md) — Fleetman, DataDrive, HIS, and PathQ.
-- DataDrive implementation: `CS/DataDrive.Module/BusinessObjects/AdditionalAppearanceRule.cs` and `CS/DataDrive.Module/Features/Appearance/`.
 - Standard XAF entry point: `AppearanceController.CollectAppearanceRules` and `IAppearanceRuleProperties` in the installed DevExpress version.
