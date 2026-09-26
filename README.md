@@ -24,7 +24,7 @@ These skills prevent AI coding agents from hitting the silent gotchas that make 
 |---|---|
 | **xaf-hangfire-jobs** | Command/Handler jobs with zero XAF dependency, HangfireJobDispatcher vs DirectJobDispatcher, JobDefinition entity, XafJobScopeInitializer service-account auth, JobSyncService startup reconciliation |
 | **xaf-search-panels** | Configurable advanced-search popups with generated `[DomainComponent]` DTOs — and why runtime Roslyn compilation is incompatible with AddSecuredEFCore |
-| **xaf-conditional-appearance** | Data-driven appearance rules from the database via AppearanceController.CollectAppearanceRules + IAppearanceRuleProperties adapter, with immediate-effect cache invalidation |
+| **xaf-custom-conditional-appearance** | Shared `AdditionalAppearanceRule` contract, EF Core/XPO persistence, and creating an appearance rule from the active ListView filter |
 | **xaf-navigation-hub** | Card-based DashboardView launchpad as startup view: IModelNavigationHub, permission-filtered tiles via ShowNavigationItemController, per-user pinned favorites |
 | **xaf-environment-auth** | SSO vs password authentication switched by ASPNETCORE_ENVIRONMENT (not #if DEBUG), with the HangfireJob service-account carve-out |
 | **xaf-playwright-testing** | E2E testing XAF Blazor with Playwright + NUnit: AuthenticatedTestBase, multi-fallback selectors, screenshot-on-failure, NetworkIdle timing |
