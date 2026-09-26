@@ -2,7 +2,7 @@
 
 **Rekomendacja:** reguły powinny dodawać i zdejmować własne przypisania tagów. Rekord może nadal pokazywać jeden tag, nawet gdy ten sam tag pochodzi z kilku źródeł. Automat usuwa tylko źródło, którym zarządza.
 
-Ten opis rozwija rekomendację z [porównania tagów](xaf-tags-comparison.md). Opisuje wspólne zachowanie dla XAF z EF Core i XPO. Sposób mapowania przypisań trzeba dopasować do ORM oraz zasad konkretnego projektu.
+Ten opis określa wspólne zachowanie automatycznego tagowania w XAF z EF Core i XPO. Mapowanie przypisań dopasuj do używanego ORM oraz reguł aplikacji.
 
 ## Cel
 
