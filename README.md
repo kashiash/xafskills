@@ -1,70 +1,81 @@
-# XAF Skills for Claude Code
+# Umiejętności XAF dla Claude Code
 
-![XAF Skills Overview](xafskills-overview.png)
+![Przegląd umiejętności XAF](xafskills-overview.png)
 
-Hard-learned lessons from 15+ DevExpress XAF projects, distilled into reusable [Claude Code skills](https://docs.anthropic.com/en/docs/claude-code).
+Sprawdzone wskazówki z ponad 15 projektów DevExpress XAF. Zebraliśmy je w umiejętnościach dla [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
-These skills prevent AI coding agents from hitting the silent gotchas that make XAF + EF Core development painful.
+Pomagają agentom AI unikać typowych pułapek podczas pracy z XAF i EF Core.
 
-## Skills
+## Umiejętności
 
-### Core
+### Podstawy
 
-| Skill | What it covers |
+| Umiejętność | Zakres |
 |---|---|
-| **xaf-efcore-entities** | Entity authoring: virtual properties, no OwnsOne, BaseObjectInt, ObservableCollection, decimal precision, PostgreSQL DateTime trap, GCRecord indexes, ValueConverters |
-| **xaf-blazor-startup** | Startup.cs configuration: service registration order, middleware pipeline, JWT auth, OData/Web API, module lifecycle, non-persistent objects |
-| **xaf-security** | Permissions: type/object/member-level security, role export/import, PermissionsReloadMode, background job auth, CurrentUserIdOperator |
-| **xaf-reporting** | ReportsV2: parameter objects, Visible=false gotcha, GetCriteria() vs FilterString, PredefinedReportsUpdater |
-| **devexpress-xaf-docker** | Containerizing XAF Blazor: SkiaSharp native deps, DevExpress version pinning, PostgreSQL/MySQL provider setup, schema initialization |
+| **xaf-efcore-entities** | Tworzenie encji: właściwości `virtual`, `BaseObjectInt`, `ObservableCollection`, precyzja `decimal`, pułapka `DateTime` w PostgreSQL, indeksy `GCRecord` i konwertery wartości. |
+| **xaf-blazor-startup** | Konfiguracja `Startup.cs`: kolejność rejestracji usług, potok middleware, JWT, OData i Web API, cykl życia modułów oraz obiekty nietrwałe. |
+| **xaf-security** | Uprawnienia do typów, obiektów i właściwości; eksport i import ról; `PermissionsReloadMode`; uwierzytelnianie zadań w tle; `CurrentUserIdOperator`. |
+| **xaf-reporting** | ReportsV2: obiekty parametrów, pułapka `Visible=false`, `GetCriteria()` i `FilterString`, `PredefinedReportsUpdater`. |
+| **devexpress-xaf-docker** | Konteneryzacja XAF Blazor: natywne zależności SkiaSharp, wersje DevExpress, PostgreSQL i MySQL oraz inicjalizacja schematu. |
+| **xaf-tags** | Trwałe tagi w XAF dla EF Core i XPO: przypisywanie, filtrowanie, akcje zbiorcze, automatyzacja i wyświetlanie oznaczeń. |
 
-### Patterns
+### Wzorce
 
-| Skill | What it covers |
+| Umiejętność | Zakres |
 |---|---|
-| **xaf-hangfire-jobs** | Command/Handler jobs with zero XAF dependency, HangfireJobDispatcher vs DirectJobDispatcher, JobDefinition entity, XafJobScopeInitializer service-account auth, JobSyncService startup reconciliation |
-| **xaf-search-panels** | Configurable advanced-search popups with generated `[DomainComponent]` DTOs — and why runtime Roslyn compilation is incompatible with AddSecuredEFCore |
-| **xaf-custom-conditional-appearance** | Wspólny kontrakt `AdditionalAppearanceRule`, zapis reguł w EF Core i XPO oraz tworzenie reguły wyglądu z aktywnego filtra listy |
-| **xaf-navigation-hub** | Card-based DashboardView launchpad as startup view: IModelNavigationHub, permission-filtered tiles via ShowNavigationItemController, per-user pinned favorites |
-| **xaf-environment-auth** | SSO vs password authentication switched by ASPNETCORE_ENVIRONMENT (not #if DEBUG), with the HangfireJob service-account carve-out |
-| **xaf-playwright-testing** | E2E testing XAF Blazor with Playwright + NUnit: AuthenticatedTestBase, multi-fallback selectors, screenshot-on-failure, NetworkIdle timing |
-| **xaf-easytest-authoring** | EasyTest functional tests driving real WinForms + Blazor UI from one test body: derive captions/guards from entities & ViewControllers, semantic API cheat-sheet, EasyTest project wiring, and the locale/nested-grid/Blazor-driver gotchas |
+| **xaf-hangfire-jobs** | Zadania Command/Handler bez zależności od XAF, `HangfireJobDispatcher` i `DirectJobDispatcher`, encja `JobDefinition`, uwierzytelnianie konta technicznego oraz synchronizacja zadań przy starcie. |
+| **xaf-search-panels** | Konfigurowalne okna wyszukiwania z DTO `[DomainComponent]` oraz ograniczenia kompilacji Roslyn podczas działania z `AddSecuredEFCore`. |
+| **xaf-custom-conditional-appearance** | Wspólny kontrakt `AdditionalAppearanceRule`, reguły wbudowane, generowane w kodzie i zapisane w EF Core lub XPO. Opisuje też tworzenie reguły z aktywnego filtra listy. |
+| **xaf-navigation-hub** | Startowy `DashboardView` z kafelkami, filtrowaniem według uprawnień i ulubionymi przypiętymi przez użytkownika. |
+| **xaf-environment-auth** | Wybór SSO lub hasła na podstawie `ASPNETCORE_ENVIRONMENT`, wraz z wyjątkiem dla konta technicznego Hangfire. |
+| **xaf-playwright-testing** | Testy E2E XAF Blazor w Playwright i NUnit: logowanie, odporne selektory, zrzuty ekranu po błędach i synchronizacja z siecią. |
+| **xaf-easytest-authoring** | Testy funkcjonalne EasyTest dla WinForms i Blazor: konfiguracja projektów, selektory, API EasyTest oraz typowe pułapki lokalizacji i zagnieżdżonych siatek. |
+| **xaf-saved-list-filters** | Zapisywanie filtrów list XAF z EF Core: filtry prywatne i publiczne, właściciel, zakres widoku i tenanta, bezpieczne użycie `CriteriaOperator` oraz czyszczenie kryteriów. |
 
-## Installation
+## Materiały o wzorcach
 
-These skills ship as a Claude Code **plugin** (`xaf-tools`) via this repo's built-in marketplace. Install once per machine:
+- [Umiejętność zapisanych filtrów](skills/xaf-saved-list-filters/SKILL.md) — dodawanie zapisanych filtrów list w aplikacjach XAF z EF Core.
+- [Porównanie reguł wyglądu](docs/appearance-rules-comparison.md) — wzorce Fleetman, DataDrive, HIS i PathQ oraz wspólny kontrakt.
+- [Umiejętność reguł wyglądu](skills/xaf-custom-conditional-appearance/SKILL.md) — atrybuty XAF, reguły generowane w kodzie i konfiguracja EF Core/XPO.
+- [Porównanie tagów](docs/xaf-tags-comparison.md) — rozwiązania Fleetman, DataDrive, HIS i PathQ.
+- [Projekt automatycznego tagowania](docs/xaf-auto-tags-design.md) — reguły, praca na tenantach i bezpieczne usuwanie przypisań.
+- [Umiejętność tagów](skills/xaf-tags/SKILL.md) — tagi w XAF dla EF Core i XPO.
+
+## Instalacja
+
+Umiejętności są dostępne jako wtyczka Claude Code `xaf-tools`. Zainstaluj ją z marketplace:
 
 ```text
-/plugin marketplace add MBrekhof/xafskills
+/plugin marketplace add kashiash/xafskills
 /plugin install xaf-tools@xafskills
 ```
 
-That's it. All 12 skills install together and trigger automatically when Claude Code works on matching tasks. To keep machines in sync, enable auto-update for the marketplace (`autoUpdate: true` in your `~/.claude/settings.json` under `extraKnownMarketplaces`) — the plugin tracks the latest commit, so a `git push` here propagates to every machine on its next session.
+Wtyczka instaluje wszystkie 14 umiejętności. Claude Code uruchamia je automatycznie przy pasujących zadaniach. Aby aktualizować wtyczkę automatycznie, ustaw `autoUpdate: true` dla marketplace w `~/.claude/settings.json` w sekcji `extraKnownMarketplaces`.
 
-Update manually at any time with:
+Możesz też zaktualizować ją ręcznie:
 
 ```text
 /plugin marketplace update xafskills
 ```
 
-### Manual install (no plugin)
+### Instalacja ręczna
 
-Prefer to copy individual skills? They live under `skills/`:
+Możesz skopiować wybraną umiejętność z katalogu `skills/`:
 
 ```bash
-cp -r skills/xaf-efcore-entities ~/.claude/skills/      # global (all projects)
-cp -r skills/xaf-efcore-entities /path/to/project/.claude/skills/   # per-project
+cp -r skills/xaf-efcore-entities ~/.claude/skills/      # globalnie, dla wszystkich projektów
+cp -r skills/xaf-efcore-entities /path/to/project/.claude/skills/   # tylko dla projektu
 ```
 
-## Requirements
+## Wymagania
 
-- DevExpress XAF v25.2+ with EF Core
-- .NET 8.0 or .NET 9.0
+- DevExpress XAF 25.2 lub nowszy z EF Core
+- .NET 8.0 lub .NET 9.0
 
-## Source
+## Źródła wiedzy
 
-Mined from real production projects covering: dynamic assembly loading, runtime entity creation, Hangfire integration, Elsa workflows, PostgreSQL partitioning, role management, navigation hubs, AI chat integration, report parameter generation, and more.
+Wskazówki pochodzą z projektów produkcyjnych. Obejmują dynamiczne ładowanie zestawów, tworzenie encji podczas działania aplikacji, Hangfire, Elsa, partycjonowanie PostgreSQL, zarządzanie rolami, nawigację, czat AI i raporty.
 
-## License
+## Licencja
 
 MIT
