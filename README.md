@@ -26,6 +26,8 @@ Pomagają agentom AI unikać typowych pułapek podczas pracy z XAF i EF Core.
 | **[xaf-hangfire-jobs](skills/xaf-hangfire-jobs/SKILL.md)** | Zadania Command/Handler bez zależności od XAF, `HangfireJobDispatcher` i `DirectJobDispatcher`, encja `JobDefinition`, uwierzytelnianie konta technicznego oraz synchronizacja zadań przy starcie. |
 | **[xaf-search-panels](skills/xaf-search-panels/SKILL.md)** | Konfigurowalne okna wyszukiwania z DTO `[DomainComponent]` oraz ograniczenia kompilacji Roslyn podczas działania z `AddSecuredEFCore`. |
 | **[xaf-custom-conditional-appearance](skills/xaf-custom-conditional-appearance/SKILL.md)** | Wspólny kontrakt `AdditionalAppearanceRule`, reguły wbudowane, generowane w kodzie i zapisane w EF Core lub XPO. Opisuje też tworzenie reguły z aktywnego filtra listy. |
+| **[xaf-view-layouts](skills/xaf-view-layouts/SKILL.md)** | Personalizacja i zapis układu ListView oraz DetailView przez wbudowane różnice modelu XAF, wraz z resetowaniem układu. |
+| **[xaf-model-editor](skills/xaf-model-editor/SKILL.md)** | Edycja drzewa Application Model: wartości i węzły, lokalizacje, reset, zapis warstwy użytkownika i modelu współdzielonego. |
 | **[xaf-navigation-hub](skills/xaf-navigation-hub/SKILL.md)** | Startowy `DashboardView` z kafelkami, filtrowaniem według uprawnień i ulubionymi przypiętymi przez użytkownika. |
 | **[xaf-environment-auth](skills/xaf-environment-auth/SKILL.md)** | Wybór SSO lub hasła na podstawie `ASPNETCORE_ENVIRONMENT`, wraz z wyjątkiem dla konta technicznego Hangfire. |
 | **[xaf-playwright-testing](skills/xaf-playwright-testing/SKILL.md)** | Testy E2E XAF Blazor w Playwright i NUnit: logowanie, odporne selektory, zrzuty ekranu po błędach i synchronizacja z siecią. |
@@ -36,6 +38,8 @@ Pomagają agentom AI unikać typowych pułapek podczas pracy z XAF i EF Core.
 
 - [Umiejętność zapisanych filtrów](skills/xaf-saved-list-filters/SKILL.md) — dodawanie zapisanych filtrów list w aplikacjach XAF z EF Core.
 - [Umiejętność reguł wyglądu](skills/xaf-custom-conditional-appearance/SKILL.md) — atrybuty XAF, reguły generowane w kodzie i konfiguracja EF Core/XPO.
+- [Umiejętność układów widoków](skills/xaf-view-layouts/SKILL.md) — personalizacja layoutu użytkownika oraz zapis różnic modelu XAF.
+- [Umiejętność edytora modelu](skills/xaf-model-editor/SKILL.md) — edycja węzłów Application Model i zapis różnic użytkownika lub administratora.
 - [Projekt automatycznego tagowania](docs/xaf-auto-tags-design.md) — reguły, praca na tenantach i bezpieczne usuwanie przypisań.
 - [Umiejętność tagów](skills/xaf-tags/SKILL.md) — tagi w XAF dla EF Core i XPO.
 
@@ -48,7 +52,7 @@ Umiejętności są dostępne jako wtyczka Claude Code `xaf-tools`. Zainstaluj j�
 /plugin install xaf-tools@xafskills
 ```
 
-Wtyczka instaluje wszystkie 14 umiejętności. Claude Code uruchamia je automatycznie przy pasujących zadaniach. Aby aktualizować wtyczkę automatycznie, ustaw `autoUpdate: true` dla marketplace w `~/.claude/settings.json` w sekcji `extraKnownMarketplaces`.
+Wtyczka instaluje wszystkie 16 umiejętności. Claude Code uruchamia je automatycznie przy pasujących zadaniach. Aby aktualizować wtyczkę automatycznie, ustaw `autoUpdate: true` dla marketplace w `~/.claude/settings.json` w sekcji `extraKnownMarketplaces`.
 
 Możesz też zaktualizować ją ręcznie:
 
