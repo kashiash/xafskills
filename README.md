@@ -31,6 +31,7 @@ Pomagają agentom AI unikać typowych pułapek podczas pracy z XAF i EF Core.
 | **xaf-playwright-testing** | Testy E2E XAF Blazor w Playwright i NUnit: logowanie, odporne selektory, zrzuty ekranu po błędach i synchronizacja z siecią. |
 | **xaf-easytest-authoring** | Testy funkcjonalne EasyTest dla WinForms i Blazor: konfiguracja projektów, selektory, API EasyTest oraz typowe pułapki lokalizacji i zagnieżdżonych siatek. |
 | **xaf-saved-list-filters** | Zapisywanie filtrów list XAF z EF Core: filtry prywatne i publiczne, właściciel, zakres widoku i tenanta, bezpieczne użycie `CriteriaOperator` oraz czyszczenie kryteriów. |
+| **xaf-azure-maps-proxy** | Mapy z Azure Maps przez proxy po stronie serwera i MapLibre GL: klucz poza HTML, przepisywanie stylu i TileJSON, cache, pula kluczy, limit żądań na IP, stylowanie warstw i eksport HTML działający offline. |
 
 ## Materiały o wzorcach
 
@@ -50,7 +51,7 @@ Umiejętności są dostępne jako wtyczka Claude Code `xaf-tools`. Zainstaluj j�
 /plugin install xaf-tools@xafskills
 ```
 
-Wtyczka instaluje wszystkie 14 umiejętności. Claude Code uruchamia je automatycznie przy pasujących zadaniach. Aby aktualizować wtyczkę automatycznie, ustaw `autoUpdate: true` dla marketplace w `~/.claude/settings.json` w sekcji `extraKnownMarketplaces`.
+Wtyczka instaluje wszystkie 15 umiejętności. Claude Code uruchamia je automatycznie przy pasujących zadaniach. Aby aktualizować wtyczkę automatycznie, ustaw `autoUpdate: true` dla marketplace w `~/.claude/settings.json` w sekcji `extraKnownMarketplaces`.
 
 Możesz też zaktualizować ją ręcznie:
 
