@@ -3,12 +3,12 @@
   "owner": {
     "name": "Martin Brekhof"
   },
-  "description": "DevExpress XAF and Blazor Server skills for Claude Code.",
+  "description": "DevExpress XAF and Blazor Server skills for Claude Code, including PostgreSQL provider setup and tags across EF Core and XPO.",
   "plugins": [
     {
       "name": "xaf-tools",
       "source": "./",
-      "description": "Hard-learned DevExpress XAF + EF Core lessons as Claude Code skills.",
+      "description": "Hard-learned DevExpress XAF + EF Core lessons, including saved list filters.",
       "category": "productivity",
       "keywords": ["xaf", "devexpress", "dotnet", "blazor"]
     }

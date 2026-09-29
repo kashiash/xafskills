@@ -17,6 +17,7 @@ Pomagają agentom AI unikać typowych pułapek podczas pracy z XAF i EF Core.
 | **xaf-security** | Uprawnienia do typów, obiektów i właściwości; eksport i import ról; `PermissionsReloadMode`; uwierzytelnianie zadań w tle; `CurrentUserIdOperator`. |
 | **xaf-reporting** | ReportsV2: obiekty parametrów, pułapka `Visible=false`, `GetCriteria()` i `FilterString`, `PredefinedReportsUpdater`. |
 | **devexpress-xaf-docker** | Konteneryzacja XAF Blazor: natywne zależności SkiaSharp, wersje DevExpress, PostgreSQL i MySQL oraz inicjalizacja schematu. |
+| **xaf-postgresql-provider** | PostgreSQL w XAF z EF Core: provider, migracje, obowiązkowe `citext` dla wszystkich pól tekstowych oraz obsługa daty i czasu. |
 | **xaf-tags** | Trwałe tagi w XAF dla EF Core i XPO: przypisywanie, filtrowanie, akcje zbiorcze, automatyzacja i wyświetlanie oznaczeń. |
 
 ### Wzorce
@@ -35,8 +36,11 @@ Pomagają agentom AI unikać typowych pułapek podczas pracy z XAF i EF Core.
 ## Materiały o wzorcach
 
 - [Umiejętność zapisanych filtrów](skills/xaf-saved-list-filters/SKILL.md) — dodawanie zapisanych filtrów list w aplikacjach XAF z EF Core.
+- [Porównanie wzorców filtrów](docs/saved-list-filters-comparison.md) i [projekt rozwiązania](docs/saved-list-filters-design.md) — Fleetman, DataDrive, HIS i PathQ.
 - [Porównanie reguł wyglądu](docs/appearance-rules-comparison.md) — wzorce Fleetman, DataDrive, HIS i PathQ oraz wspólny kontrakt.
 - [Umiejętność reguł wyglądu](skills/xaf-custom-conditional-appearance/SKILL.md) — atrybuty XAF, reguły generowane w kodzie i konfiguracja EF Core/XPO.
+- [Konfiguracja PostgreSQL w DataDrive, HIS i PathQ](docs/postgresql-provider-setup.md) — provider, migracje, `citext` oraz obsługa daty i czasu.
+- [Umiejętność PostgreSQL](skills/xaf-postgresql-provider/SKILL.md) — konfiguracja PostgreSQL w XAF z EF Core.
 - [Porównanie tagów](docs/xaf-tags-comparison.md) — rozwiązania Fleetman, DataDrive, HIS i PathQ.
 - [Projekt automatycznego tagowania](docs/xaf-auto-tags-design.md) — reguły, praca na tenantach i bezpieczne usuwanie przypisań.
 - [Umiejętność tagów](skills/xaf-tags/SKILL.md) — tagi w XAF dla EF Core i XPO.
@@ -50,7 +54,7 @@ Umiejętności są dostępne jako wtyczka Claude Code `xaf-tools`. Zainstaluj j�
 /plugin install xaf-tools@xafskills
 ```
 
-Wtyczka instaluje wszystkie 14 umiejętności. Claude Code uruchamia je automatycznie przy pasujących zadaniach. Aby aktualizować wtyczkę automatycznie, ustaw `autoUpdate: true` dla marketplace w `~/.claude/settings.json` w sekcji `extraKnownMarketplaces`.
+Wtyczka instaluje wszystkie 15 umiejętności. Claude Code uruchamia je automatycznie przy pasujących zadaniach. Aby aktualizować wtyczkę automatycznie, ustaw `autoUpdate: true` dla marketplace w `~/.claude/settings.json` w sekcji `extraKnownMarketplaces`.
 
 Możesz też zaktualizować ją ręcznie:
 

@@ -202,24 +202,24 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 ## PostgreSQL-specific
 
-### DateTime / Npgsql UTC trap (CRITICAL)
+### DateTime / Npgsql policy
 
-Npgsql 6+ enforces strict `DateTimeKind` semantics. XAF generates `DateTime` values with `DateTimeKind.Unspecified` throughout its internals (audit trails, model diffs, security timestamps, and your own entities). Npgsql rejects these for `timestamp with time zone` columns with:
+Npgsql 6+ enforces `DateTimeKind` semantics that must agree with the PostgreSQL column type. A mismatch can fail on application startup or when XAF saves audit data, model differences, security records, or business entities. For example, Npgsql rejects `DateTimeKind.Unspecified` when writing to `timestamp with time zone`:
 
 ```
 Cannot write DateTime with Kind=Unspecified to PostgreSQL type 'timestamp with time zone'
 ```
 
-This affects ALL DateTime properties — your entities, XAF system tables, and internal infrastructure. The app may crash on startup before your code even runs.
+Do not apply one timestamp fix to every project. First inspect the model, existing schema, data meaning, seed values, and all runtime/design-time entry paths. Choose one consistent policy for UTC instants or timezone-free values.
 
-**Fix:** Set the legacy switch in `Program.cs` BEFORE creating the host builder:
+Use `Npgsql.EnableLegacyTimestampBehavior` only when the target project relies on legacy behavior and you have checked the consequences. Set it before the first Npgsql initialization on every entry path, not only before one host builder:
 
 ```csharp
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 // Then: var builder = WebApplication.CreateBuilder(args);
 ```
 
-This forces Npgsql to treat all timestamps as timezone-naive, matching XAF's `DateTime` semantics. Without it, even basic operations like loading security roles or writing model diffs will throw.
+This is a process-wide compatibility switch, not a database setting. It can mask inconsistent date-time semantics. See [the PostgreSQL provider skill](../xaf-postgresql-provider/SKILL.md) for the full decision and setup checklist.
 
 ### Other PostgreSQL notes
 
