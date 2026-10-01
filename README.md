@@ -27,6 +27,7 @@ Pomagają agentom AI unikać typowych pułapek podczas pracy z XAF i EF Core.
 | **xaf-hangfire-jobs** | Zadania Command/Handler bez zależności od XAF, `HangfireJobDispatcher` i `DirectJobDispatcher`, encja `JobDefinition`, uwierzytelnianie konta technicznego oraz synchronizacja zadań przy starcie. |
 | **xaf-search-panels** | Konfigurowalne okna wyszukiwania z DTO `[DomainComponent]` oraz ograniczenia kompilacji Roslyn podczas działania z `AddSecuredEFCore`. |
 | **xaf-custom-conditional-appearance** | Wspólny kontrakt `AdditionalAppearanceRule`, reguły wbudowane, generowane w kodzie i zapisane w EF Core lub XPO. Opisuje też tworzenie reguły z aktywnego filtra listy. |
+| **xaf-dashboards** | Dashboardy DevExpress w XAF Blazor: pozycja menu, źródła jako klasy nietrwałe z loaderem analizy, filtr główny, koła i legendy, formaty liczb, filtry elementów (HTTP 500), aktualizacja zaseedowanej definicji przez hash oraz weryfikacja na działającym środowisku. |
 | **xaf-navigation-hub** | Startowy `DashboardView` z kafelkami, filtrowaniem według uprawnień i ulubionymi przypiętymi przez użytkownika. |
 | **xaf-environment-auth** | Wybór SSO lub hasła na podstawie `ASPNETCORE_ENVIRONMENT`, wraz z wyjątkiem dla konta technicznego Hangfire. |
 | **xaf-playwright-testing** | Testy E2E XAF Blazor w Playwright i NUnit: logowanie, odporne selektory, zrzuty ekranu po błędach i synchronizacja z siecią. |
@@ -44,6 +45,8 @@ Pomagają agentom AI unikać typowych pułapek podczas pracy z XAF i EF Core.
 - [Porównanie tagów](docs/xaf-tags-comparison.md) — rozwiązania Fleetman, DataDrive, HIS i PathQ.
 - [Projekt automatycznego tagowania](docs/xaf-auto-tags-design.md) — reguły, praca na tenantach i bezpieczne usuwanie przypisań.
 - [Umiejętność tagów](skills/xaf-tags/SKILL.md) — tagi w XAF dla EF Core i XPO.
+- [Umiejętność dashboardów](skills/xaf-dashboards/SKILL.md) — budowa, seedowanie i weryfikacja dashboardów DevExpress w XAF Blazor.
+- [Dashboardy w DataDrive](docs/xaf-dashboards-datadrive.md) — studium przypadku: objawy, dowody, decyzje i skrypt weryfikacji.
 
 ## Instalacja
 
@@ -54,7 +57,7 @@ Umiejętności są dostępne jako wtyczka Claude Code `xaf-tools`. Zainstaluj j�
 /plugin install xaf-tools@xafskills
 ```
 
-Wtyczka instaluje wszystkie 15 umiejętności. Claude Code uruchamia je automatycznie przy pasujących zadaniach. Aby aktualizować wtyczkę automatycznie, ustaw `autoUpdate: true` dla marketplace w `~/.claude/settings.json` w sekcji `extraKnownMarketplaces`.
+Wtyczka instaluje wszystkie 16 umiejętności. Claude Code uruchamia je automatycznie przy pasujących zadaniach. Aby aktualizować wtyczkę automatycznie, ustaw `autoUpdate: true` dla marketplace w `~/.claude/settings.json` w sekcji `extraKnownMarketplaces`.
 
 Możesz też zaktualizować ją ręcznie:
 
