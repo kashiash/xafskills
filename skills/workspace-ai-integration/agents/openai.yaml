@@ -1,0 +1,4 @@
+interface:
+  display_name: "Workspace AI integration"
+  short_description: "Integrate Syncfusion A2UI with XAF Blazor"
+  default_prompt: "Integrate Syncfusion A2UI Workspace AI with authorized application data, tested actions, and the host's real component adapters."
