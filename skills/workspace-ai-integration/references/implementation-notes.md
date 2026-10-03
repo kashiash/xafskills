@@ -24,16 +24,13 @@ is disposed. Include the required `root` component and validate every child refe
 
 ## Keep prompts editable
 
-Kierat initially kept system instructions and example prompts in `AIChat.razor`. That made prompt
-changes require editing a large UI file and made tests difficult to focus. The implementation now
-stores `WorkspaceAiSystemPrompt.md` and `WorkspaceAiExamples.md` as explicit embedded resources,
-loaded by a small `WorkspaceAiPrompts` class. Named examples use stable headings such as
-`## priority-and-status-pies`; tests verify resource loading and variable substitution. Keep
-allowed components dynamic so a catalog change does not silently leave stale prompt instructions.
-
-For a standalone Razor class library, embedded Markdown is simple and deployable. If operators need
-to edit prompts after deployment, use a separately managed, validated configuration store instead;
-do not write runtime changes back into the assembly.
+The current Kierat A2UI code still assembles its system prompt in `AIChat.razor`; treat this as a
+known maintenance gap, not a completed pattern. When evolving that integration, move system
+instructions and named examples into explicit Markdown resources loaded by a small provider. For a
+single assembly, embedded resources are deployable; if operators need post-deployment edits, use a
+separately managed, validated configuration store. Fail clearly for missing resources/examples,
+keep allowed components synchronized with the server contract, and add focused checks for resource
+loading and variable substitution when this extraction is implemented.
 
 ## Separate model tools from UI actions
 
